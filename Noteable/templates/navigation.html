@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Home/css/navigation.css' %}">
+    <title>AP Noteable</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'Home/img/logo.png'%}" alt="noteable_logo">
+        </div>  
+        <ul class="nav">
+            <li><a href="/">About Us</a></li>
+            <li><a href="/">AP Course</a></li>
+            <li><a href="/">Resource</a></li>
+        </ul>
+    </div>
+</body>
+</html>
