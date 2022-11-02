@@ -119,7 +119,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+""" STATIC_ROOT = 'C:/Users/coley/OneDrive/桌面/CS 学习文件夹/Noteable/Noteable/static/' """
 STATIC_URL = '/static/'
 STATICFIEL_DIR = [
     os.path.join(BASE_DIR,'static')

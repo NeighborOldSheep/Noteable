@@ -1,0 +1,52 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+<!-- main content -->
+
+<!-- title -->
+<div class="title">
+    <h2 class="title">AP Course Notes Summary</h2>
+</div>
+
+<!-- course -->
+<div class="course">
+    
+    <ul class="center">
+        <li>
+            <a href="/">
+                <img src="{% static 'course/img/HG.png' %}" alt="human_geography">
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <img src="{% static 'course/img/economics.png' %}" alt="economics">
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <img src="{% static 'course/img/psychology.png' %}" alt="psychology">
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <img src="{% static 'course/img/environmental_science.png' %}" alt="environmental_science">
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <img src="{% static 'course/img/world_history.png' %}" alt="world_history">
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <img src="{% static 'course/img/seminar.png' %}" alt="seminar">
+            </a>
+        </li>
+    </ul>
+</div>
+     
+{% endblock %}
+ 
+
+   

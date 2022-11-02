@@ -1,6 +1,31 @@
 {% extends 'navigation.html' %}
+{% load static %}
 
 {% block content%}
-
-
+<!-- AP Exam CountDown -->
+<div class="center">
+    <div class="countdown">
+        <div class="title">
+            <h2>AP Exam Count Down</h2>
+        </div>
+        <div class="countdown-container">
+            <div class="countdown-el days">
+                <p class="big-text" id="days">0</p>
+                <span>Days</span>
+            </div>
+            <div class="countdown-el hours">
+                <p class="big-text" id="hours">0</p>
+                <span>Hours</span>
+            </div>
+            <div class="countdown-el mins">
+                <p class="big-text" id="mins">0</p>
+                <span>Minutes</span>
+            </div>
+            <div class="countdown-el seconds">
+                <p class="big-text " id="seconds">0</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock%}

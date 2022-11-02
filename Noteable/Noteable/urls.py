@@ -19,4 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Home.urls")),  #默认网址访问的网页
+    path('course/',include("course.urls")), #访问Ap Course页面路由
+   
 ]
