@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #add App
     'Home',
+    'course',
+    'resource'
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,47 @@
+.chapter-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.center{
+    width: 1080px;
+    margin: 20px auto;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw; /* 自适应文字大小 */
+    font-family:'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* text-transform: uppercase; */
+    margin: 20px 0;
+
+}
+
+.title a{
+    color: black;
+}
+
+.chapter li{
+    /* width: 500px; */
+    margin: 25px 0;
+}
+
+.chapter > li > a {
+    font-size: 2vw;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.chapter > li > p{
+    font-size: 1.25vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
