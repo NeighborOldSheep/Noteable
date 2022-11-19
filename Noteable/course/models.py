@@ -1,10 +1,12 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Psychology(models.Model):
     title = models.CharField(max_length = 50) #chapter title
-    notes = models.TextField(default = "") #notes
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
+    notes = RichTextField(null=True) #notes
+    
     """ notes = models.TextField(default="") #notes """
 
 
@@ -14,8 +16,9 @@ class Psychology(models.Model):
 
 class Economics(models.Model):
     title = models.CharField(max_length = 50) #chapter title
-    notes = models.TextField(default = "")  #notes
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
+    notes = RichTextField(null=True)  #notes
+    
     """ notes = models.TextField(default="") #notes """
 
     #to show the title name in the backend
@@ -24,8 +27,9 @@ class Economics(models.Model):
 
 class Human_Geography(models.Model):
     title = models.CharField(max_length = 50) #chapter title
-    notes = models.TextField(default = "") #notes
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
+    notes = RichTextField(null=True) #notes
+    
     """ notes = models.TextField(default="") #notes """
 
     #to show the title name in the backend
@@ -34,8 +38,9 @@ class Human_Geography(models.Model):
 
 class Seminar(models.Model):
     title = models.CharField(max_length = 50) #chapter title
-    notes = models.TextField(default = "") #notes
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
+    notes = RichTextField(null=True) #notes
+    
     """ notes = models.TextField(default="") #notes """
 
     #to show the title name in the backend
@@ -44,8 +49,9 @@ class Seminar(models.Model):
 
 class Env_science(models.Model):
     title = models.CharField(max_length = 50) #chapter title
-    notes = models.TextField(default = "") #notes
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
+    notes = RichTextField(null=True) #notes
+    
     """ notes = models.TextField(default="") #notes """
 
     #to show the title name in the backend
@@ -54,8 +60,9 @@ class Env_science(models.Model):
 
 class World_history(models.Model):
     title = models.CharField(max_length = 50) #chapter title
-    notes = models.TextField(default = "") #notes
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
+    notes = RichTextField(null=True) #notes
+    
     """ notes = models.TextField(default="") #notes """
 
     #to show the title name in the backend

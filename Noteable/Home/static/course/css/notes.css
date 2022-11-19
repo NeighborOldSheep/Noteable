@@ -1,0 +1,31 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.notes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 1080px;
+    text-align: center;
+}
+
+.notes p{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 1.1em;
+    width: 1080px;
+    line-height: 1.35em;
+}
+
+.notes h2{
+    margin: 15px 0;
+}
+

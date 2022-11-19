@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<div>
+<div class="content">
     <div class="title">
-        {{ chapter }}
+        <a href="{% url 'psychology' %}">{{ chapter }}</a>
     </div>
     <div class="notes">
-        {{ notes }}
+        {{ notes|safe }}
     </div>
 </div>
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Psychology,Economics,Env_science,Human_Geography,World_history,Seminar
 from django.views.generic import ListView, DetailView
+import markdown
 
 # Create your views here.
 def course(request):
@@ -21,10 +22,19 @@ def psychology_notes(request,id):
     psychology = Psychology.objects.get(id=id)
     dict_psychology = {}
     
+    psychology.notes = markdown.markdown(psychology.notes,
+    extension = [
+        #包含缩进、表格等常用扩展
+        'markdown.extensison.extra',
+        #语法高亮扩展
+        'markdown.extensions.codehilite'
+    ])
+
     #save each of the chapter name
     dict_psychology['chapter'] = psychology.title
     #save each chapter notes
     dict_psychology['notes'] = psychology.notes
+
     
     return render(request,'course/psychology_notes.html',dict_psychology)
 
