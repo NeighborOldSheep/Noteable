@@ -1,0 +1,14 @@
+{% extends 'navigation.html' %}
+
+{% block content %}
+
+<div class="content">
+    <div class="title">
+        <a href="{% url 'human_geography' %}">{{ chapter }}</a>
+    </div>
+    <div class="notes">
+        {{ notes|safe }}
+    </div>
+</div>
+
+{% endblock %}

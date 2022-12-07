@@ -40,10 +40,29 @@ def psychology_notes(request,id):
 
 #Human-Geography
 def human_geography(request):
-    ob = Human_Geography.objects.all()
-    context = {"psychology":ob}
+    human_geography = Human_Geography.objects.all()
+    context = {"human_geography":human_geography}
 
-    return render(request,'course/human_geography.html')
+    return render(request,'course/human_geography.html',context)
+
+def human_geogrpahy_notes(request,id):
+    human_geogrpahy = Human_Geography.objects.get(id=id)
+    dict_human_geogrpahy = {}
+
+    human_geogrpahy.notes = markdown.markdown(human_geogrpahy.notes, 
+    extension = [
+        #包含缩进、表格等常用扩展
+        'markdown.extensison.extra',
+        #语法高亮扩展
+        'markdown.extensions.codehilite'
+    ])
+
+    dict_human_geogrpahy['chapter'] = human_geogrpahy.title
+    dict_human_geogrpahy['notes'] = human_geogrpahy.notes
+
+    return render(request,'course/human_geogrpahy_notes.html',dict_human_geogrpahy)
+
+    
 
 #economics
 def economics(request):

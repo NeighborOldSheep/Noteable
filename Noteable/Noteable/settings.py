@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     #add App
     'Home',
     'course',
-    'resource'
+    'resource',
+    'encourage',
+    'exam',
 ]
 
 MIDDLEWARE = [

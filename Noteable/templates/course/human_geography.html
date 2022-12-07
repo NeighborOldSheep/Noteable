@@ -1,0 +1,25 @@
+{% extends 'navigation.html' %}
+
+{% block content %}
+
+<div class="chapter-wrapper">
+    <div class="title">
+        <a href="{% url 'course' %}">Human Geography</a>
+    </div>
+    <ul class="chapter center">
+        {% for chapter in human_geography %}
+        <li>
+            <a href="{% url 'human_geography_notes' chapter.id %}">{{ chapter.title }}</a>
+            <p>{{ chapter.intro }}</p>
+        </li>
+        {% endfor %}
+        <!-- hello world -->
+    </ul>
+</div>
+
+
+
+{% endblock %}
+
+
+

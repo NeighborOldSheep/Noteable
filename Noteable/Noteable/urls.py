@@ -20,5 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Home.urls")),  #默认网址访问的网页
     path('course/',include("course.urls")), #访问Ap Course页面路由
+    path('encourage/',include('encourage.urls')),#访问encourage页面路由
+    path('exam/',include('exam.urls')),#访问做题页面路由
    
 ]
