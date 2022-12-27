@@ -1,42 +1,17 @@
 {% extends 'navigation.html' %}
 {% load static %}
 
-
 {% block content %}
 
-<!-- 遍历数据库提取所有题目 -->
-{% for one in object_list %}
+<div class="subject_list center">
+    <h2 class="title">Partice Test</h2>
+    <ul>
+        <li><a href="{% url 'psychology_test' %}">Psychology</a></li>
+        <li><a href="">Macroeconomic</a></li>
+        <li><a href="">Microeconomics</a></li>
+        <li><a href="{% url 'world_history_test' %}">World History</a></li>
+    </ul>
+</div>
 
-    <!-- 显示题目题干 forloop.counter为显示序号  -->
-    <p>{{ forloop.counter }}, {{ one.stem }}</p>
-    <!-- 显示选项以及对应选项的内容get_options_display为把选项1234显示成ABCD -->
-    {% for options in one.options_set.all %}
-        {{ options.get_options_display }}, {{ options.content }} </br>
-    {% endfor %}
-
-    <!--显示答案get_options_display为把选项1234显示成ABCD -->
-    <p id="{{ one.id }}id" hidden>
-        {% for answer in one.answer_set.all %}
-            {{ answer.get_options_display }}
-        {% endfor %}
-    </p>
-    
-    <input type = 'button' onclick=showp("{{ one.id }}id") value='答案'/>
-
-
-{% endfor %}
-
-<script>
-    /* 隐藏显示函数 */
-    function showp(id){
-        if (document.getElementById(id).style.display == 'inline') {
-            document.getElementById(id).style.display = 'none';
-        }
-        else {
-            document.getElementById(id).style.display='inline';
-        }
- 
-    }
-</script>
 
 {% endblock %}

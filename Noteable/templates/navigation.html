@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'course/css/chapter.css'%}">
     <link rel="shortcut icon" href="{% static 'Home/img/logo.ico'%}">
     <link rel="stylesheet" href="{% static 'course/css/notes.css'%}">
+    <link rel="stylesheet" href="{% static 'exam/css/index.css'%}">
     <title>AP Noteable</title>
 </head>
 <body>
@@ -30,10 +31,41 @@
             <li><a href="{% url 'encourage' %}">Encourage</a></li>
         </ul>
     </div>
+    <!-- 手机端 -->
+    <div class="header" id="header">
+        <div class="header-wrapper center clearfix">    
+            <!-- right side logo -->
+            <div class="logo">
+                <!-- <img src=""> -->
+                <a href="{% url 'home_index' %}">
+                    <img sizes = "(max-width: 900px) 660px"
+                         src="{% static 'Home/img/logo.png'%}" alt="noteable_logo">
+                </a>
+            </div>
+            <button class="menu-btn" id="menu-btn">☰</button>
+            <!-- left side navBar -->
+            <ul class="nav">
+                <li><a href="/">About Us</a></li>
+                <li><a href="{% url 'course' %}">AP Course</a></li>
+                <li><a href="{% url 'exam'%}">Partice Test</a></li>
+                <li><a href="/">Resource</a></li>
+                <li><a href="{% url 'encourage' %}">Encourage</a></li>
+            </ul>
+        </div>
+    </div>
     {% endblock %}
 
     {% block content %}
     {% endblock %}
+
+    <!-- footer -->
+    <div class="footer">
+        <ul class="contant">
+            <li><a href="mailto:noteable2022@gmail.com">noteable2022@gmail.com</a></li>
+            <li><a href="">Wechat: y15638205412 </a></li>
+            <li><a>Creat By: Hongchen Yang  | Copy Right © 2022-2024</a></li>
+        </ul>
+    </div>
 
 </body>
 <!-- script -->

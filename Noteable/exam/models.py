@@ -1,46 +1,29 @@
 from django.db import models
 
 
-Type = (
-    (0, '单选'),
-    (1, '多选')
-)
- 
-Option = (
-    (1, 'A'),
-    (2, 'B'),
-    (3, 'C'),
-    (4, 'D'),
-    (5, 'E')
-)
- 
+
 # Create your models here.
-class Subject(models.Model):
-    stem = models.CharField(max_length=1024, verbose_name='题干内容', blank=False, null=False)
-    type = models.IntegerField(choices=Type, verbose_name='题目类型,单选还是多选')
-    
- 
+class Question(models.Model):
+
+    ANSWER=(
+        ('A','A'),
+        ('B','B'),
+        ('C','C'),
+        ('D','D'),
+        ('E','E')
+    )
+   
+    subject = models.CharField('科目', max_length=20)
+    title = models.TextField('题目')
+    optionA=models.CharField('A选项',max_length = 258)
+    optionB=models.CharField('B选项',max_length = 258)
+    optionC=models.CharField('C选项',max_length = 258)
+    optionD=models.CharField('D选项',max_length = 258)
+    optionE=models.CharField('E选项',max_length = 258, default='')
+    answer=models.CharField('答案',max_length=10,choices=ANSWER)
     class Meta:
-        db_table = 'subject'
-        verbose_name = '题库'
- 
-class Options(models.Model):
-    options = models.IntegerField(choices=Option, verbose_name='选项ABCDEFGH')
-    content = models.CharField(max_length=256, verbose_name='选项内容')
-    subject = models.ForeignKey('Subject',on_delete = models.CASCADE)
- 
-    class Meta:
-        db_table = 'options'
-        verbose_name = '选项表'
-        unique_together = ('subject', 'content')
-        ordering = ['options']
- 
-class Answer(models.Model):
-    options = models.IntegerField(choices=Option, verbose_name='正确答案ABCDEFGH')
-    subject = models.ForeignKey('Subject',on_delete = models.CASCADE)
- 
-    class Meta:
-        db_table = 'answer'
-        verbose_name = '答案表'
-        unique_together = ('subject', 'options')
-        ordering = ['options']
+        db_table='question'
+        verbose_name='单项选择题库'
+        verbose_name_plural=verbose_name
+    def __str__(self):
+        return '<%s:%s>'%(self.subject,self.title)

@@ -1,0 +1,79 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- 科目 -->
+<div class="center">
+    <h2>AP Psychology</h2>
+</div>
+
+
+<!-- 遍历数据库提取所有内容 -->
+{% for psychology in psychology_test%}
+<div class="center">
+    
+    <!-- 题目 -->
+    <div>
+        <p>{{ forloop.counter}}.{{ psychology.title }}</p>
+    </div>
+
+    <!-- 选项 -->
+    <ul>
+        <li>
+            <input type="radio" name="{{ psychology.id }}">
+            <label>
+                <p style="display:inline">A.{{ psychology.optionA }}</p>
+            </label>
+        </li>
+        <li>
+            <input type="radio" name="{{ psychology.id }}">
+            <label>
+                <p style="display:inline">B.{{ psychology.optionB }}</p>
+            </label>
+        </li>
+        <li>
+            <input type="radio" name="{{ psychology.id }}">
+            <label>
+                <p style="display:inline">C.{{ psychology.optionC }}</p>
+            </label>
+        </li>
+        <li>
+            <input type="radio" name="{{ psychology.id }}">
+            <label>
+                <p style="display:inline">D.{{ psychology.optionD }}</p>
+            </label>
+        </li>
+        <li>
+            <input type="radio" name="{{ psychology.id }}">
+            <label>
+                <p style="display:inline">E.{{ psychology.optionE }}</p>
+            </label>
+        </li>
+        <!-- 答案 -->
+        <li>
+            <p id="{{ psychology.id }}" hidden>
+                {{ psychology.answer }}
+            </p>
+            <input type="button" onclick=showp("{{ psychology.id }}") value="Answer")/>
+        </li> 
+    </ul>
+</div>
+
+{% endfor %}
+                    
+<script>
+    /* 隐藏显示函数 */
+    function showp(id){
+        if (document.getElementById(id).style.display == 'inline') {
+            document.getElementById(id).style.display = 'none';
+        }
+        else {
+            document.getElementById(id).style.display='inline';
+        }
+ 
+    }
+</script>
+
+{% endblock %}

@@ -2,6 +2,16 @@
     width: 1090px;
     margin: 0 auto;
 }
+
+.content{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
 .countdown{
     margin-top: 30px;
     margin-bottom: 50px;

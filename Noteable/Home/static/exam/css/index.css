@@ -1,0 +1,41 @@
+.center{
+    width: 1080px;
+    margin: 20px auto;
+}
+
+.subject_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1080px;
+    text-align: center;
+}
+
+.subject_list .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw; /* 自适应文字大小 */
+    font-family:'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+.subject_list ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1080px;
+    text-align: center;
+}
+
+.subject_list ul li{
+    font-size: 2em;
+    margin: 15px 0;
+}
+
+.subject_list ul li a{
+    color: rgb(44, 44, 44);
+}
