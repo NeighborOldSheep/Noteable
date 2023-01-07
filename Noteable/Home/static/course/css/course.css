@@ -55,7 +55,7 @@
     height: 400px;
     margin-left: 20px;
     transition: all .2s linear;
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
 .course ul li:hover{

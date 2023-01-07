@@ -3,65 +3,70 @@
 
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'exam/css/exam.css'%}">
 
-<!-- 科目 -->
 <div class="center">
-    <h2>AP Psychology</h2>
-</div>
-
-
-<!-- 遍历数据库提取所有内容 -->
-{% for psychology in psychology_test%}
-<div class="center">
-    
-    <!-- 题目 -->
-    <div>
-        <p>{{ forloop.counter}}.{{ psychology.title }}</p>
+        <!-- 科目 -->
+    <div class="title">
+        <h2>AP Psychology</h2>
     </div>
 
-    <!-- 选项 -->
-    <ul>
-        <li>
-            <input type="radio" name="{{ psychology.id }}">
-            <label>
-                <p style="display:inline">A.{{ psychology.optionA }}</p>
-            </label>
-        </li>
-        <li>
-            <input type="radio" name="{{ psychology.id }}">
-            <label>
-                <p style="display:inline">B.{{ psychology.optionB }}</p>
-            </label>
-        </li>
-        <li>
-            <input type="radio" name="{{ psychology.id }}">
-            <label>
-                <p style="display:inline">C.{{ psychology.optionC }}</p>
-            </label>
-        </li>
-        <li>
-            <input type="radio" name="{{ psychology.id }}">
-            <label>
-                <p style="display:inline">D.{{ psychology.optionD }}</p>
-            </label>
-        </li>
-        <li>
-            <input type="radio" name="{{ psychology.id }}">
-            <label>
-                <p style="display:inline">E.{{ psychology.optionE }}</p>
-            </label>
-        </li>
-        <!-- 答案 -->
-        <li>
-            <p id="{{ psychology.id }}" hidden>
-                {{ psychology.answer }}
-            </p>
-            <input type="button" onclick=showp("{{ psychology.id }}") value="Answer")/>
-        </li> 
-    </ul>
+
+    <!-- 遍历数据库提取所有内容 -->
+    {% for psychology in psychology_test%}
+    <div class="question center">
+        
+        <!-- 题目 -->
+        <div>
+            <p>{{ forloop.counter}}.{{ psychology.title }}</p>
+        </div>
+
+        <!-- 选项 -->
+        <ul>
+            <li>
+                <input type="radio" name="{{ psychology.id }}" id="{{ psychology.optionA }}">
+                <label for="{{ psychology.optionA }}">
+                    <p style="display:inline">A.{{ psychology.optionA }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ psychology.id }}" id="{{ psychology.optionB }}">
+                <label for="{{ psychology.optionB }}">
+                    <p style="display:inline">B.{{ psychology.optionB }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ psychology.id }}" id="{{ psychology.optionC }}">
+                <label for="{{ psychology.optionC }}">
+                    <p style="display:inline">C.{{ psychology.optionC }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ psychology.id }}" id="{{ psychology.optionD }}">
+                <label for="{{ psychology.optionD }}">
+                    <p style="display:inline">D.{{ psychology.optionD }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ psychology.id }}" id="'{{ psychology.optionE }}">
+                <label for="{{ psychology.optionE }}">
+                    <p style="display:inline">E.{{ psychology.optionE }}</p>
+                </label>
+            </li>
+            <!-- 答案 -->
+            <li>
+                <p id="{{ psychology.id }}" hidden>
+                    {{ psychology.answer }}
+                </p>
+                <input type="button" onclick=showp("{{ psychology.id }}") value="Answer")/>
+            </li> 
+        </ul>
+    </div>
+
+    {% endfor %}
 </div>
 
-{% endfor %}
+
                     
 <script>
     /* 隐藏显示函数 */

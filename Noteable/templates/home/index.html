@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content%}
+<link rel="stylesheet" href="{% static 'Home/css/index.css' %}">
 <!-- AP Exam CountDown -->
 <div class="content center">
     <div class="countdown">
@@ -28,4 +29,7 @@
         </div>
     </div>
 </div>
+
+<!-- script -->
+<script src="{% static 'Home/js/index.js' %}"></script>
 {% endblock%}

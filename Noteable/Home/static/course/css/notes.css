@@ -3,7 +3,30 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    width: 100%;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* text-transform: uppercase; */
+    margin: 20px 0;
+    text-align: center;
+}
+
+.title a{
+    color: #333;
+    font-style: bold;
+    font-size: 2rem;
+
+}
+
+.center{
+    width: 1080px;
+    margin: 20px 0;
 }
 
 .notes{
@@ -12,8 +35,12 @@
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
-    width: 1080px;
-    text-align: center;
+    /* width: 100%; */
+    text-align: left;
+}
+
+.notes h1{
+    color: #333;
 }
 
 .notes p{
@@ -21,7 +48,7 @@
     vertical-align: middle;
     text-align: left;
     font-size: 1.1em;
-    width: 1080px;
+    width: 80%;
     line-height: 1.35em;
 }
 
@@ -29,3 +56,77 @@
     margin: 15px 0;
 }
 
+table {
+    border: 1px solid #ccc;
+    width: 80%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+  }
+
+  table tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+  table th, table td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  table th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  @media screen and (max-width: 900px) {
+
+    .center{
+        margin: 20px 0;
+    }
+
+    .notes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        width: 100%;
+        text-align: left;
+    }
+
+    table {
+      border: 0;
+    }
+
+    table thead {
+      display: none;
+    }
+
+    table tr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+
+    table td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }

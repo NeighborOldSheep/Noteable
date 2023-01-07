@@ -22,5 +22,5 @@ urlpatterns = [
     path('course/',include("course.urls")), #访问Ap Course页面路由
     path('encourage/',include('encourage.urls')),#访问encourage页面路由
     path('exam/',include('exam.urls')),#访问做题页面路由
-   
+    path('aboutus/',include('aboutus.urls')) #访问about us页面路由
 ]

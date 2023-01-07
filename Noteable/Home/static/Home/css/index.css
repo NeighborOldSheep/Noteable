@@ -1,8 +1,8 @@
-.center{
+/* .center{
     width: 1090px;
     margin: 0 auto;
 }
-
+ */
 .content{
     margin-top: 20px;
     display: flex;
@@ -29,6 +29,10 @@
     margin-bottom: 100px;
 }
 
+.countdown .title h2{
+    font-size: 2rem;
+}
+
 .countdown-container{
     text-align: center;
     display: flex;
@@ -49,4 +53,11 @@
 
 .countdown-el span{
     font-size: 1.3rem;
+}
+
+@media screen and (max-width: 960px){
+    .center{
+        width: auto;
+    }
+
 }

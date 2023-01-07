@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'resource',
     'encourage',
     'exam',
+    'aboutus',
 ]
 
 MIDDLEWARE = [

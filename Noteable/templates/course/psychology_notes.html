@@ -1,14 +1,35 @@
 {% extends 'navigation.html' %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'course/css/notes.css'%}">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
 
 <div class="content">
     <div class="title">
         <a href="{% url 'psychology' %}">{{ chapter }}</a>
     </div>
-    <div class="notes">
+    <div class="notes center">
         {{ notes|safe }}
     </div>
 </div>
 
+<script> 
+  
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i<tables.length; i++){
+            
+            tables[i].removeAttribute("style");
+            tables[i].removeAttribute("border");
+            tables[i].removeAttribute("style");
+        }
+        
+        console.log(tables);
+        
+    
+</script>
+
+
 {% endblock %}
+
