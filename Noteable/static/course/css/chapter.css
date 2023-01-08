@@ -1,0 +1,112 @@
+html,body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.chapter-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.center{
+    width: 1080px;
+    margin: 20px auto;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* text-transform: uppercase; */
+    margin: 20px 0;
+
+}
+
+.title a{
+    color: black;
+    font-size: 2.5rem; /* 自适应文字大小 */
+}
+
+
+.chapter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 100%; */
+    text-align: left;
+    
+}
+
+.chapter li{
+    /* width: 500px; */
+   /*  margin: 25px 0; */
+   width: 80%;
+   margin-bottom: 35px;
+  
+}
+
+.chapter > li > a {
+    /* font-size: ; */
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.chapter > li > p{
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-style:italic;
+}
+
+/* mobile version */
+@media screen and (max-width: 900px){
+    .center{
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .chapter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .chapter li{
+        /* width: 500px; */
+       /*  margin: 25px 0; */
+       width: 80%;
+       margin-bottom: 5%;
+       margin-left: 0;
+    }
+    
+    .chapter > li > a {
+        /* font-size: ; */
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .chapter > li > p{
+        font-size: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-style:italic;
+    }
+}
+
