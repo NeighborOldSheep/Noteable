@@ -3,6 +3,7 @@
     margin: 0 auto;
 }
  */
+
 .content{
     margin-top: 20px;
     display: flex;
@@ -10,7 +11,40 @@
     align-items: center;
     width: 100%;
     text-align: center;
+    flex-direction: column;
 }
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* text-transform: uppercase; */
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+  
+
+.flyer-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+}
+
+  
+.flyer-zh{
+    margin-left: 50px;
+}
+
+.flyer-box img{
+    width: 420px;
+    height: 560px;
+}
+
 
 .countdown{
     margin-top: 30px;
@@ -59,5 +93,25 @@
     .center{
         width: auto;
     }
+
+    .flyer-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .flyer-zh{
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .flyer-box img{
+        width: 80%;
+        height: 96%;
+    }
+    
 
 }

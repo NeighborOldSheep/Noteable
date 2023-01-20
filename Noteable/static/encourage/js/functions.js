@@ -1,5 +1,5 @@
 /*
- * http://love.hackerzhou.me
+ * http://tianji.me/loveme
  */
 
 // variables
@@ -55,9 +55,8 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒"; 
-	setTimeout(function(){
-		$("#clock").html(result);
-		$("#clock").fadeIn(2000);
-	}, 43000);
+	/* var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒";  */
+	var result = days + "</span> Days <span class=\"digit\">" + hours + "</span> Hours <span class=\"digit\">" + minutes + "</span> Minutes <span class=\"digit\">" + seconds + "</span> Seconds"; 
+	
+	$("#clock").html(result);
 }
