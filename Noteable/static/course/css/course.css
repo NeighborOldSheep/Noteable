@@ -3,10 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .title h2{
-    font-size: 3vw; /* 自适应文字大小 */
+    font-size: 2.75vw; /* 自适应文字大小 */
     font-family:'Lucida Sans Regular', 
         'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: uppercase;
@@ -69,3 +70,22 @@
     height: 400px;
 }
 
+@media screen and (max-width: 900px){
+    .title h2{
+        font-size: 1.5rem; /* 自适应文字大小 */
+        font-family:'Lucida Sans Regular', 
+            'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        /* animation: shining 0.1s alternate infinite; */
+        /* color: #4d1f01 */
+    }
+
+    .course ul li{
+        display: block;
+        width: 320px;
+        height: 400px;
+        margin-left: 8%;
+        transition: all .2s linear;
+        margin-bottom: 10px;
+    }
+}

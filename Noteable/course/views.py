@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Psychology,Economics,Env_science,Human_Geography,World_history,Seminar
+from .models import Psychology,Macroeconomics,Env_science,Human_Geography,World_history,US_hisotry
 from django.views.generic import ListView, DetailView
 import markdown
 
@@ -65,10 +65,29 @@ def human_geogrpahy_notes(request,id):
     
 
 #economics
-def economics(request):
-    ob = Economics.objects.all()
-    context = {"psychology":ob}
-    return render(request,'course/economics.html')
+def macroeconomics(request):
+    ob = Macroeconomics.objects.all()
+    context = {"Macroeconomics":ob}
+    return render(request,'course/macro_econ.html',context)
+
+def macro_notes(request,id):
+    macroeconomics = Macroeconomics.objects.get(id=id)
+    dict_macro_econ = {}
+
+    macroeconomics.notes = markdown.markdown(macroeconomics.notes, 
+    extension = [
+        #包含缩进、表格等常用扩展
+        'markdown.extensison.extra',
+        #语法高亮扩展
+        'markdown.extensions.codehilite'
+    ])
+
+    dict_macro_econ['chapter'] = macroeconomics.title
+    dict_macro_econ['notes'] = macroeconomics.notes
+
+    return render(request,'course/macro_econ_notes.html',dict_macro_econ)
+
+
 
 #env-science
 def env_science(request):
@@ -83,7 +102,7 @@ def world_history(request):
     return render(request,'course/world_history.html')
 
 #seminar
-def seminar(request):
-    ob = Seminar.objects.all()
+def us_hisotry(request):
+    ob = US_hisotry.objects.all()
     context = {"psychology":ob}
-    return render(request,'course/seminar.html')
+    return render(request,'course/us_history.html')

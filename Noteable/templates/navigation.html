@@ -11,6 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'Home/css/navigation.css' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'Home/img/logo.ico'%}">
+    <system.webServer> 
+        <staticContent>
+        <remove fileExtension=".woff" />
+        <mimeMap fileExtension=".woff" mimeType="font/x-font-woff" />  
+        </staticContent>
+    </system.webServer>
     
     <title>AP Noteable</title>
 </head>
@@ -26,8 +32,8 @@
         <button class="menu-btn" id="menu-btn">☰</button>
         <ul class="nav">
             <li><a href="{% url 'aboutus' %}">About Us</a></li>
-            <li><a href="{% url 'course' %}">AP Course</a></li>
-            <li><a href="/">Find Your AP</a></li>
+            <li><a href="{% url 'course' %}">AP Courses</a></li>
+            <!-- <li><a href="/">Find Your AP</a></li> -->
             <li><a href="{% url 'exam'%}">Practice Test</a></li>
             <!-- <li><a href="/">Resource</a></li> -->
             <li><a href="{% url 'encourage' %}">Encourage</a></li>
@@ -43,7 +49,12 @@
         <ul class="contant">
             <li><a href="mailto:noteable2022@gmail.com">noteable2022@gmail.com</a></li>
             <li><a href="/">Wechat: y15638205412 </a></li>
-            <li><a>Create By: Hongchen Yang  | Copy Right © 2022-2024</a></li>
+            <li><a>Created By: Hongchen Yang  | CopyRight © 2022-2024</a></li>
+            <li>
+                *AP & Advanced Placement Program are registered trademarks of the College Board, 
+                which was not involved in the production of, and does not endorse this site 
+                <a href="https://www.apnoteable.com">www.apnoteable.com</a>
+            </li>
         </ul>
     </div>
 

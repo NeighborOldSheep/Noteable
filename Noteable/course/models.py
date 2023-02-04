@@ -14,7 +14,7 @@ class Psychology(models.Model):
     def __str__(self):
         return self.title[:50]
 
-class Economics(models.Model):
+class Macroeconomics(models.Model):
     title = models.CharField(max_length = 50) #chapter title
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
     notes = RichTextField(null=True)  #notes
@@ -36,7 +36,7 @@ class Human_Geography(models.Model):
     def __str__(self):
         return self.title[:50]
 
-class Seminar(models.Model):
+class US_hisotry(models.Model):
     title = models.CharField(max_length = 50) #chapter title
     intro = models.CharField(max_length = 288,default = "") # breif intorduce of chapter
     notes = RichTextField(null=True) #notes

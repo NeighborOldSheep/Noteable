@@ -1,0 +1,21 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'course/css/chapter.css'%}">
+
+<div class="chapter-wrapper">
+    <div class="title">
+        <a href="{% url 'course' %}">World History</a>
+    </div>
+    <div class="unpublish">
+        <p>Will be published Soon</p>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+

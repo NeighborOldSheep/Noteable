@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor', #后台Markdown文本编辑器
+       
     #add App
     'Home',
     'course',
@@ -75,6 +76,44 @@ TEMPLATES = [
         },
     },
 ]
+
+""" 
+
+    (
+            
+        ),
+
+
+"""
+
+CKEDITOR_CONFIGS = {
+    
+    'default': {
+        'skin': 'office2013',
+        'toolbar_Basic': [
+            ['Source', '-', 'Bold', 'Italic']
+        ],
+        'EqnEditor' : 'ckeditor/ckeditor/plugins/eqneditor',
+        'toolbar_Full': [
+            ['Cut','Copy','Paste','PasteText','PasteFromWord',',SpellChecker','Scayt'], 
+            ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'], 
+            ['Form','Checkbox','Radio','TextField','Textarea','Select','Button', 'ImageButton','HiddenField'], 
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'], 
+            ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'], 
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], 
+            ['Link','Unlink','Anchor','Katex'], 
+            ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'], 
+            ['Styles','Format','Font','FontSize'], 
+            ['TextColor','BGColor'], 
+            ['Maximize','ShowBlocks','-','pbckcode','EqnEditor'],
+        ],
+        'toolbar': 'Full',
+        #添加插件 
+        'extraPlugins' : 'eqneditor', #数学公式编辑器
+    }
+}
+
+
 
 WSGI_APPLICATION = 'Noteable.wsgi.application'
 
@@ -132,7 +171,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 
-""" STATICFIEL_DIRS = [
-    os.path.join(BASE_DIR,'static')
-] """
-""" STATIC_ROOT = 'C:/Users/coley/OneDrive/桌面/CS 学习文件夹/Noteable/Noteable/static' """
+""" MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_IMAGE_BACKEND = 'pillow' """
+
+""" STATIC_ROOT = "Noteable/staitc/" """
+

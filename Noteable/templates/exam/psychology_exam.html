@@ -8,7 +8,7 @@
 <div class="center">
         <!-- 科目 -->
     <div class="title">
-        <h2>AP Psychology</h2>
+        <h2><a href="{% url 'exam' %}">AP Psychology</a></h2>
     </div>
 
 
@@ -58,7 +58,7 @@
                 <p id="{{ psychology.id }}" hidden>
                     {{ psychology.answer }}
                 </p>
-                <input type="button" onclick=showp("{{ psychology.id }}") value="Answer")/>
+                <input class="answer" type="button" onclick=showp("{{ psychology.id }}") value="Answer")/>
             </li> 
         </ul>
     </div>

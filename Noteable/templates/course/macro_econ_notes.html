@@ -1,0 +1,40 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'course/css/notes.css' %}">
+<div class="content">
+    <div class="title">
+        <a href="{% url 'macro_econ' %}">{{ chapter }}</a>
+    </div>
+    <div class="notes">
+        {{ notes|safe }}
+    </div>
+</div>
+
+<script> 
+
+  /* 清除富文本自带的样式 */
+    var li = document.getElementsByTagName("li");
+    var p = document.getElementsByTagName("p");
+    for(var i = 0; i<li.length; i++){
+        
+
+        li[i].style.listStyleType = 'None';
+        /* li[i].removeAttribute("list-style-type"); */
+        /* tables[i].removeAttribute("border");
+        tables[i].removeAttribute("style"); */
+    }
+    
+    console.log(li);
+    
+    /* 移除p标签固定margin */
+    for(var j=0; j<p.length; j++){
+        p[j].style.margin = 0;
+    }
+
+    
+
+</script>
+
+{% endblock %}

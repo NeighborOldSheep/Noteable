@@ -1,0 +1,104 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'exam/css/exam.css'%}">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+
+<div class="center">
+        <!-- 科目 -->
+    <div class="title">
+        <h2><a href="{% url 'exam' %}">AP Physcis A</a></h2>
+    </div>
+
+
+    <!-- 遍历数据库提取所有内容 -->
+    {% for physics in  physics_A_test %}
+    <div class="question center">
+        
+        <!-- 题目 -->
+        <div>
+            <p>{{ forloop.counter}}.{{ physics.title|striptags|safe}}</p>
+        </div>
+
+        <!-- 选项 -->
+        <ul>
+            <li>
+                <input type="radio" name="{{ physics.id }}" id="{{ physics.optionA }}">
+                <label for="{{ physics.optionA }}">
+                    <p style="display:inline" >A.{{ physics.optionA|striptags|safe}}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ physics.id }}" id="{{ physics.optionB }}">
+                <label for="{{ physics.optionB }}">
+                    <p style="display:inline">B.{{ physics.optionB|striptags|safe}}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ physics.id }}" id="{{ physics.optionC }}">
+                <label for="{{ physics.optionC }}">
+                    <p style="display:inline">C.{{ physics.optionC|striptags|safe}}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ physics.id }}" id="{{ physics.optionD }}">
+                <label for="{{ physics.optionD }}">
+                    <p style="display:inline">D.{{ physics.optionD|striptags|safe}}</p>
+                </label>
+            </li>
+            <!-- <li>
+                <input type="radio" name="{{ macro.id }}" id="'{{ macro.optionE }}">
+                <label for="{{ macro.optionE }}">
+                    <p style="display:inline">E.{{ macro.optionE }}</p>
+                </label>
+            </li> -->
+            <!-- 答案 -->
+            <li>
+                <p id="{{ physics.id }}" hidden>
+                    {{ physics.answer }}
+                </p>
+                <input class="answer" type="button" onclick=showp("{{ physics.id }}") value="Answer")/>
+            </li> 
+            <li>
+                <p id="{{ physics.id }}e" hidden style="display:none;">
+                    {{ physics.explain|striptags}}
+                </p>
+                <input class="explain" type="button" onclick=showe("{{ physics.id }}") value="Explain")/>
+            </li>
+        </ul>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+                    
+<script>
+    /* 隐藏显示函数 */
+    function showp(id){
+        if (document.getElementById(id).style.display == 'inline') {
+            document.getElementById(id).style.display = 'none';
+        }
+        else {
+            document.getElementById(id).style.display='inline';
+        }
+ 
+    }
+
+    function showe(id){
+        name = id + "e"
+        if (document.getElementById(name).style.display == 'inline') {
+            document.getElementById(name).style.display = 'none';
+        }
+        else {
+            document.getElementById(name).style.display='inline';
+        }
+ 
+    }
+</script>
+
+{% endblock %}

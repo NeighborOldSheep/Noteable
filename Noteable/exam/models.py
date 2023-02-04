@@ -1,4 +1,6 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+
 
 
 
@@ -14,13 +16,15 @@ class Question(models.Model):
     )
    
     subject = models.CharField('科目', max_length=20)
-    title = models.TextField('题目')
-    optionA=models.CharField('A选项',max_length = 258)
-    optionB=models.CharField('B选项',max_length = 258)
-    optionC=models.CharField('C选项',max_length = 258)
-    optionD=models.CharField('D选项',max_length = 258)
-    optionE=models.CharField('E选项',max_length = 258, default='')
-    answer=models.CharField('答案',max_length=10,choices=ANSWER)
+    title = RichTextField('题目')
+    optionA = RichTextField('A选项')
+    optionB = RichTextField('B选项')
+    optionC = RichTextField('C选项')
+    optionD = RichTextField('D选项')
+    optionE = RichTextField('E选项',default='')
+    answer = RichTextField('答案',max_length=10,choices=ANSWER)
+    explain = RichTextField("题目解析",blank=True)
+
     class Meta:
         db_table='question'
         verbose_name='单项选择题库'

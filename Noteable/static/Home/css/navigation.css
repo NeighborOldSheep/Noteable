@@ -1,11 +1,12 @@
 /* default style clean */
 body{
     overflow-x: hidden;
-    height: 100%;
     margin: 0;
     padding: 0;
     border: none;
+    min-height: 100vh;
     /* position: relative; */
+
 }
 
 
@@ -87,11 +88,12 @@ ul.nav li a:hover{
     background-color: rgb(240,233,223);
     z-index: 3;
     height: auto;
-    margin-top: 15vh;
-    /* margin-bottom: 0; */
-   /*  position: absolute;
-    bottom: 0; */
+    margin-top: 50vh;
     
+    /* position: absolute;
+    bottom: 0; */
+   
+  
 }
 
 ul.contant{
@@ -102,6 +104,7 @@ ul.contant{
     flex-direction: column;
     width: 100vw;
     text-align: center;
+    height: 200px;
 }
 
 .contant > li{
@@ -135,6 +138,22 @@ ul.contant{
 
 
 @media screen and (max-width: 960px){
+
+    /* Logo */
+    div.logo{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        z-index: 2
+        
+    }
+
+    .logo img{
+        width: 50vw;
+        border-bottom: 1px solid #333;
+    }
+
     .wrapper{
         position: relative;
     }

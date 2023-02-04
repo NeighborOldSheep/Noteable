@@ -3,10 +3,11 @@
 
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'exam/css/exam.css'%}">
 
 <!-- 科目 -->
 <div class="center">
-    <h2>AP World Hisotry</h2>
+    <h2 class="title"><a href="{% url 'exam' %}">AP World Hisotry</a></h2>
 </div>
 
 
@@ -15,48 +16,48 @@
 <div class="center">
     
     <!-- 题目 -->
-    <div>
+    <div >
         <p>{{ forloop.counter}}.{{ world_history.title }}</p>
     </div>
 
     <!-- 选项 -->
     <ul>
         <li>
-            <input type="radio" name="{{ world_history.id }}">
-            <label>
+            <input type="radio" name="{{ world_history.id }}" id = "{{ world_history.optionA }}" >
+            <label for="{{ world_history.optionA }}" >
                 <p style="display:inline">A.{{ world_history.optionA }}</p>
             </label>
         </li>
         <li>
-            <input type="radio" name="{{ world_history.id }}">
-            <label>
+            <input type="radio" name="{{ world_history.id }}" id = "{{ world_history.optionB }}">
+            <label for="{{ world_history.optionB }}" >
                 <p style="display:inline">B.{{ world_history.optionB }}</p>
             </label>
         </li>
         <li>
-            <input type="radio" name="{{ world_history.id }}">
-            <label>
+            <input type="radio" name="{{ world_history.id }}" id = "{{ world_history.optionC }}" >
+            <label for="{{ world_history.optionC }}">
                 <p style="display:inline">C.{{ world_history.optionC }}</p>
             </label>
         </li>
         <li>
-            <input type="radio" name="{{ world_history.id }}">
-            <label>
+            <input type="radio" name="{{ world_history.id }}" id = "{{ world_history.optionD }}">
+            <label for="{{ world_history.optionD }}">
                 <p style="display:inline">D.{{ world_history.optionD }}</p>
             </label>
         </li>
         <li>
-            <input type="radio" name="{{ world_history.id }}">
-            <label>
+            <input type="radio" name="{{ world_history.id }}" id = "{{ world_history.optionE }}">
+            <label for="{{ world_history.optionE }}">
                 <p style="display:inline">E.{{ world_history.optionE }}</p>
             </label>
         </li>
         <!-- 答案 -->
-        <li>
-            <p id="{{ world_history.id }}" hidden>
+        <li  >
+            <p id="{{ world_history.id }}"  hidden>
                 {{ world_history.answer }}
             </p>
-            <input type="button" onclick=showp("{{ world_history.id }}") value="Answer")/>
+            <input class = "answer" type="button" onclick=showp("{{ world_history.id }}") value="Answer")/>
         </li> 
     </ul>
 </div>

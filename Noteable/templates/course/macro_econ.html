@@ -1,0 +1,27 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'course/css/chapter.css'%}">
+
+<div class="chapter-wrapper">
+    <div class="title">
+        <a href="{% url 'course' %}">MacroEconomics</a>
+    </div>
+    <ul class="chapter center">
+        {% for chapter in Macroeconomics %}
+        <li>
+            <a href="{% url 'macro_econ_notes' chapter.id %}">{{ chapter.title }}</a>
+            <p>{{ chapter.intro }}</p>
+        </li>
+        {% endfor %}
+        <!-- hello world -->
+    </ul>
+</div>
+
+
+
+{% endblock %}
+
+
+

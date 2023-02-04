@@ -1,0 +1,84 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'exam/css/exam.css'%}">
+
+<div class="center">
+        <!-- 科目 -->
+    <div class="title">
+        <h2><a href="{% url 'exam' %}">AP Marco Economic</a></h2>
+    </div>
+
+
+    <!-- 遍历数据库提取所有内容 -->
+    {% for macro in  macro_economic_test%}
+    <div class="question center">
+        
+        <!-- 题目 -->
+        <div>
+            <p>{{ forloop.counter}}.{{ macro.title }}</p>
+        </div>
+
+        <!-- 选项 -->
+        <ul>
+            <li>
+                <input type="radio" name="{{ macro.id }}" id="{{ macro.optionA }}">
+                <label for="{{ macro.optionA }}">
+                    <p style="display:inline">A.{{ macro.optionA }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ macro.id }}" id="{{ macro.optionB }}">
+                <label for="{{ macro.optionB }}">
+                    <p style="display:inline">B.{{ macro.optionB }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ macro.id }}" id="{{ macro.optionC }}">
+                <label for="{{ macro.optionC }}">
+                    <p style="display:inline">C.{{ macro.optionC }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ macro.id }}" id="{{ macro.optionD }}">
+                <label for="{{ macro.optionD }}">
+                    <p style="display:inline">D.{{ macro.optionD }}</p>
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="{{ macro.id }}" id="'{{ macro.optionE }}">
+                <label for="{{ macro.optionE }}">
+                    <p style="display:inline">E.{{ macro.optionE }}</p>
+                </label>
+            </li>
+            <!-- 答案 -->
+            <li>
+                <p id="{{ macro.id }}" hidden>
+                    {{ macro.answer }}
+                </p>
+                <input class="answer" type="button" onclick=showp("{{ psychology.id }}") value="Answer")/>
+            </li> 
+        </ul>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+                    
+<script>
+    /* 隐藏显示函数 */
+    function showp(id){
+        if (document.getElementById(id).style.display == 'inline') {
+            document.getElementById(id).style.display = 'none';
+        }
+        else {
+            document.getElementById(id).style.display='inline';
+        }
+ 
+    }
+</script>
+
+{% endblock %}
